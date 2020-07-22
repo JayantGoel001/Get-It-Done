@@ -92,3 +92,34 @@ body {
   @media (max-width: 1100px) {
     body {
       flex-direction: column; } }
+
+main {
+  flex-grow: 1;
+  position: relative; }
+
+#main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  height: 44vh;
+  width: 20%;
+  background-image: linear-gradient(rgba(var(--gradient-1), 1), rgba(var(--gradient-2), 1));
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 22% 100%); }
+  @media (max-width: 1600px) {
+    #main::after {
+      width: 30%; } }
+  @media (max-width: 1400px) {
+    #main::after {
+      height: 38vh;
+      width: 40%;
+      clip-path: polygon(0 0, 100% 0, 100% 83%, 22% 100%); } }
+  @media (max-width: 1100px) {
+    #main::after {
+      position: absolute;
+      height: 10vh;
+      width: 100%;
+      top: auto;
+      bottom: 0;
+      clip-path: polygon(0 39%, 100% 0, 100% 100%, 0 100%); } }
