@@ -1,2 +1,94 @@
+:root {
+  --bg-color: 255,255,255;
+  --text-color: 12,12,12;
+  --shadow-color:0,0,0;
+  --gradient-1: 108,29,103;
+  --gradient-2: 100,25,148;
+  --sidebar-gradient-1: 255,255,255;
+  --sidebar-gradient-2: 251,247,247; }
+
 body {
   margin: 0; }
+
+.black {
+  font-weight: 900; }
+
+.bold {
+  font-weight: 700; }
+
+.current-theme {
+  border-bottom: 4px solid; }
+
+.invert {
+  background-color: rgba(var(--text-color), 1);
+  color: rgba(var(--bg-color), 1);
+  transition: all 0.2s; }
+
+.icon {
+  transition: transform 0.4s;
+  transform-origin: center;
+  transition-timing-function: cubic-bezier(0.9, 1.65, 0.42, 0.61); }
+  .icon:hover {
+    transform: rotate(180deg); }
+
+header, h1, h2, h3, h4, h5, h6, input {
+  font-weight: inherit; }
+
+button, input {
+  font-family: inherit; }
+
+ul {
+  padding: 0; }
+
+:root {
+  min-height: 100vh; }
+  @media (max-width: 1720px) {
+    :root {
+      font-size: 95%; } }
+  @media (max-width: 1600px) {
+    :root {
+      font-size: 90%; } }
+  @media (max-width: 1500px) {
+    :root {
+      font-size: 82%; } }
+  @media (max-width: 1400px) {
+    :root {
+      font-size: 75%; } }
+  @media (max-width: 1300px) {
+    :root {
+      font-size: 70%; } }
+  @media (max-width: 1200px) {
+    :root {
+      font-size: 62%; } }
+  @media (max-width: 1100px) {
+    :root {
+      font-size: 55%; } }
+  @media (max-width: 1000px) {
+    :root {
+      font-size: 50%; } }
+  @media (max-width: 900px) {
+    :root {
+      font-size: 45%; } }
+  @media (max-width: 800px) {
+    :root {
+      font-size: 42%; } }
+  @media (max-width: 700px) {
+    :root {
+      font-size: 38%; } }
+  @media (max-width: 600px) {
+    :root {
+      font-size: 35%; } }
+  @media (max-width: 500px) {
+    :root {
+      font-size: 32%; } }
+
+body {
+  font-family: "Montserrat",sans-serif;
+  background-color: rgba(var(--bg-color), 1);
+  margin: 0;
+  cursor: default;
+  min-height: 100vh;
+  display: flex; }
+  @media (max-width: 1100px) {
+    body {
+      flex-direction: column; } }
