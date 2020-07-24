@@ -321,3 +321,44 @@ input#menu:checked ~ #menu-content {
         padding: 8rem 3.2rem; }
       #headers header:last-of-type {
         margin-top: 5rem !important; } }
+
+#input-section {
+  margin-top: 3rem;
+  margin-left: 6rem; }
+  #input-section * {
+    display: block; }
+  #input-section input {
+    width: max-content;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    opacity: 0.36;
+    outline: none;
+    border: none;
+    color: rgba(var(--text-color), 1); }
+  #input-section label {
+    visibility: hidden;
+    color: rgba(var(--text-color), 1);
+    font-size: 1rem;
+    opacity: .5; }
+  #input-section input:focus + label {
+    visibility: visible; }
+  #input-section ::placeholder {
+    color: inherit; }
+  @media (max-width: 1400px) {
+    #input-section input {
+      font-size: 4.2rem; }
+    #input-section label {
+      font-size: 1.5rem; } }
+  @media (max-width: 1100px) {
+    #input-section {
+      margin: 3rem 0 0; }
+      #input-section input {
+        width: 100%;
+        margin: 10rem 0 0.5rem;
+        font-size: 7.2rem; }
+      #input-section label {
+        font-size: 2.3rem;
+        text-align: center;
+        font-weight: 500;
+        text-transform: uppercase; } }
