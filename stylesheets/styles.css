@@ -149,7 +149,6 @@ main {
     background-repeat: no-repeat; }
 
 #menu-dimmed-bg {
-  transform: translate(-120vw);
   transition: transform 0.8s 0.2s, color 0.2s, background-color 0.2s;
   z-index: 1;
   position: fixed;
@@ -176,3 +175,68 @@ main {
     height: 75px; }
     #menu-controller label {
       height: 40px; } }
+
+#menu-content {
+  --menu-font-size: 2.25rem;
+  transition: all 0.6s 0s, color 0.2s, background-color 0.2s;
+  padding: 40px;
+  padding-left: 100px;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: rgba(var(--bg-color), 1);
+  width: 54%; }
+  #menu-content header {
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between; }
+    #menu-content header h4 {
+      text-transform: uppercase;
+      margin: 0;
+      font-size: var(--menu-font-size); }
+    #menu-content header label {
+      width: 40px;
+      height: 40px;
+      margin-right: 100px;
+      background-image: url("../images/close.png");
+      background-size: contain;
+      background-repeat: no-repeat; }
+  #menu-content #theme {
+    transition: all 0.2s; }
+    #menu-content #theme h5 {
+      margin-top: 7rem;
+      font-size: var(--menu-font-size);
+      text-transform: uppercase;
+      line-height: 10%; }
+      #menu-content #theme h5 span {
+        margin-left: 40px; }
+        #menu-content #theme h5 span:hover {
+          opacity: 0.6; }
+  #menu-content #completed-tasks {
+    transition: all 0.2s; }
+    #menu-content #completed-tasks h5 {
+      font-size: var(--menu-font-size);
+      margin: 7rem 0 1.5rem;
+      text-transform: uppercase; }
+    #menu-content #completed-tasks li {
+      font-size: var(--menu-font-size);
+      list-style: none;
+      margin: 12px 0;
+      width: max-content;
+      padding: 5px; }
+      #menu-content #completed-tasks li span {
+        margin-left: 22px; }
+  #menu-content #reset {
+    transition: all 0.2s;
+    font-size: var(--menu-font-size);
+    text-transform: uppercase;
+    padding: 5px;
+    width: max-content; }
+    #menu-content #reset:hover {
+      background-color: rgba(var(--text-color), 1);
+      color: rgba(var(--bg-color), 1); }
+  @media (max-width: 1500px) {
+    #menu-content {
+      width: 70%; } }
