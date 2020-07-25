@@ -29,8 +29,7 @@ body {
 .icon {
   transition: transform 0.4s;
   transform-origin: center;
-  transition-timing-function: cubic-bezier(0.9, 1.65, 0.42, 0.61);
-  filter: brightness(100%) invert(100%); }
+  transition-timing-function: cubic-bezier(0.9, 1.65, 0.42, 0.61); }
   .icon:hover {
     transform: rotate(180deg); }
 

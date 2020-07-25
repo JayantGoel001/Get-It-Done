@@ -28,7 +28,7 @@ body{
     &:hover{
         transform: rotate(180deg);
     }
-    filter: brightness(100%) invert(rgba(var(--invert),1));
+    // filter: brightness(100%) invert(rgba(var(--invert),1));
 }
 
 header,h1,h2,h3,h4,h5,h6,input{
