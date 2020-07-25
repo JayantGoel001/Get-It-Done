@@ -11,6 +11,24 @@ loadData("ToDoTheme") || saveData("ToDoTheme","light");
 totalTasks.innerHTML = loadData("TotalTasks");
 completedTasks.innerHTML = loadData("CompletedTasks");
 
+input.addEventListener("keydown",function(event) {
+    if (event.keyCode == 13) {
+        let task = new Task(input.value);
+        input.value = "";
+        if (task.title.length == 0) {
+            return ;
+        }
+        else{
+            addTask(taskStore,task,function() {
+                let amountOfTasks = Number(loadData("TotalTasks")) + 1;
+                saveData("TotalTasks",amountOfTasks);
+                totalTasks.innerHTML = loadData("TotalTasks");
+                updateTasks();
+            })
+        }
+    }
+})
+
 function min(a,b) {
     if (a>b) {
         return b;
@@ -75,24 +93,6 @@ function deleteTaskOnClick(element) {
     });
 }
 
-input.addEventListener("keydown",function(event) {
-    if (event.keyCode == 13) {
-        let task = new Task(input.value);
-        input.value = "";
-        if (task.title.length == 0) {
-            return ;
-        }
-        else{
-            addTask(taskStore,task,function() {
-                let amountOfTasks = Number(loadData("TotalTasks")) + 1;
-                saveData("TotalTasks",amountOfTasks);
-                totalTasks.innerHTML = loadData("TotalTasks");
-                updateTasks();
-            })
-        }
-    }
-})
-
 function updateTheme(theme){
     if (theme == 'light') {
         var bgcolor = "255,255,255";
@@ -136,4 +136,27 @@ function updateTheme(theme){
     for (var i = 0; i < icons.length; i++) {
         icons[i].style.filter =  `brightness(100%) invert(${invertStrength})`;
     }
+}
+
+function attemptReset() {
+    modal.showModal();
+}
+
+function closeModal() {
+    modal.close();
+}
+
+function reset() {
+    saveData('TotalTasks',0);
+    totalTasks.innerHTML = loadData("TotalTasks");
+
+    saveData('CompletedTasks',0);
+    completedTasks.innerHTML = loadData("CompletedTasks");
+
+    deleteAllTask(taskStore);
+    deleteAllTask(completedTaskStore);
+
+    updateTasks();
+
+
 }

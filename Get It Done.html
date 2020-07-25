@@ -35,7 +35,7 @@
 
                     </ul>
                 </section>
-                <h5 id="reset" class="bold">Reset All</h5>
+                <h5 id="reset" class="bold" onclick="attemptReset();">Reset All</h5>
             </div>
         </div>
 
@@ -71,8 +71,8 @@
         <dialog id="modal">
             <h2>This will reset all associated data.
                 <br>Are you sure you want to do that?</h2>
-            <button class="black">Yes</button>
-            <button class="black">No</button></dialog>
+            <button class="black" onclick="reset(); closeModal();">Yes</button>
+            <button class="black" onclick="closeModal();">No</button></dialog>
 
         <script type="text/javascript" src="JavaScripts/date_format.js"></script>
 
