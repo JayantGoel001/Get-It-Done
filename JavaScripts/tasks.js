@@ -17,6 +17,7 @@ window.onload = function() {
 
     req.onsuccess = function() {
         database = req.result;
+        onLoad();
     }
     req.onerror = function(event) {
         alert("There was an error ",event);
@@ -87,6 +88,9 @@ function deleteTask(store,id,success,error=defaultError) {
 }
 
 function deleteAllTask(store,success,error=defaultError) {
+    success = success || function() {
+        console.log("Deleted All Tasks");
+    }
     let transaction = database.transaction([store],"readwrite");
     let objectStore = transaction.objectStore(store);
 
