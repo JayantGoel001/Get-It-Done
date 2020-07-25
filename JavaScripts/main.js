@@ -49,6 +49,7 @@ function updateTasks() {
 function onLoad() {
     updateTasks();
     updateTheme(loadData("ToDoTheme"));
+    document.body.style.display = 'flex';
 }
 
 function deleteTaskOnClick(element) {
@@ -131,5 +132,8 @@ function updateTheme(theme){
     saveData("ToDoTheme",theme);
 
     let invertStrength = (theme == 'light')? "0%" : "100%";
-    let icons = document.getElementsByClassName('icon')
+    let icons = document.getElementsByClassName('icon');
+    for (var i = 0; i < icons.length; i++) {
+        icons[i].style.filter =  `brightness(100%) invert(${invertStrength})`;
+    }
 }
