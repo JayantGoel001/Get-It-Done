@@ -13,7 +13,7 @@
         <div id="menu-section">
             <input type="checkbox" id="menu">
             <aside id="menu-controller">
-                <label for="menu" class="icon"></label>
+                <label for="menu" class="icon" ></label>
             </aside>
             <div id="menu-dimmed-bg"></div>
             <div id="menu-content">
@@ -24,8 +24,8 @@
 
                 <section id="theme">
                     <h5 class="bold">Theme:
-                        <span id="light" class="current-theme">Light</span>
-                        <span id="dark">Dark</span>
+                        <span id="light" class="current-theme" onclick="updateTheme('light');">Light</span>
+                        <span id="dark" onclick="updateTheme('dark');">Dark</span>
                     </h5>
                 </section>
 
@@ -41,6 +41,7 @@
                 <h5 id="reset" class="bold">Reset All</h5>
             </div>
         </div>
+
         <section id="main">
             <article id="headers" class="black">
                 <header>

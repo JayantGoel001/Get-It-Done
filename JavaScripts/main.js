@@ -19,6 +19,7 @@ function min(a,b) {
         return a;
     }
 }
+
 function updateTasks() {
     readTask(taskStore,function(tasks) {
         let list = document.getElementById('task-list');
@@ -47,6 +48,7 @@ function updateTasks() {
 
 function onLoad() {
     updateTasks();
+    updateTheme(loadData("ToDoTheme"));
 }
 
 function deleteTaskOnClick(element) {
@@ -89,3 +91,45 @@ input.addEventListener("keydown",function(event) {
         }
     }
 })
+
+function updateTheme(theme){
+    if (theme == 'light') {
+        var bgcolor = "255,255,255";
+        var textcolor = "12,12,12";
+        var shadowcolor = "0,0,0";
+        var gradient1 = "108,29,103";
+        var gradient2 = "100,25,148";
+        var sidebargradient1 = "255,255,255";
+        var sidebargradient2 = "251,247,247";
+    }
+    else{
+        var bgcolor = "19,19,19";
+        var textcolor = "255,255,255";
+        var shadowcolor ="255,255,255";
+        var gradient1 = "34,208,163";
+        var gradient2 = "32,73,11";
+        var sidebargradient1 = "35,35,35";
+        var sidebargradient2 = "46,46,46";
+    }
+
+    let root = document.documentElement;
+
+    root.style.setProperty("--bg-color",bgcolor);
+    root.style.setProperty("--text-color",textcolor);
+    root.style.setProperty("--shadow-color",shadowcolor);
+    root.style.setProperty("--gradient-1",gradient1);
+    root.style.setProperty("--gradient-2",gradient2);
+    root.style.setProperty("--sidebar-gradient-1",sidebargradient1);
+    root.style.setProperty("--sidebar-gradient-2",sidebargradient2);
+
+
+    document.getElementsByClassName('current-theme')[0].classList.remove("current-theme");
+
+    let activateClass = theme == "light"? "light" : "dark";
+    document.getElementById(activateClass).classList.add("current-theme");
+
+    saveData("ToDoTheme",theme);
+
+    let invertStrength = (theme == 'light')? "0%" : "100%";
+    let icons = document.getElementsByClassName('icon')
+}
