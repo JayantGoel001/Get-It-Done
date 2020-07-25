@@ -38,4 +38,3 @@ function getCurrentDate() {
 
     return fulldate;
 }
-console.log(getCurrentDate());
