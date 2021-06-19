@@ -1,0 +1,119 @@
+@import "variables";
+body{
+    margin: 0;
+}
+.black{
+    font-weight: 900;
+}
+.bold{
+    font-weight: 700;
+}
+.current-time{
+    border-bottom: 4px solid;
+}
+.invert{
+    background-color: rgba(var(--text-color),1);
+    color: rgba(var(--bg-color),1);
+    transition: all $color-transition-time;
+}
+.icon{
+    transition: transform 0.4s;
+    transform-origin: center;
+    transition-timing-function: cubic-bezier(0.9,1.65,0.42,0.61);
+    &:hover{
+        transform: rotate(180deg);
+    }
+}
+header,h1,h2,h3,h4,h5,h6,input{
+    font-weight: inherit;
+}
+button,input{
+    font-family: inherit;
+}
+ul{
+    padding: 0;
+}
+:root{
+    min-height: 100vh;
+    @media (max-width: 1720px) {
+        font-size: 95%;
+    }
+    @media (max-width: 1600px) {
+        font-size: 90%;
+    }
+    @media (max-width: 1500px) {
+        font-size: 82%;
+    }
+    @media (max-width: 1400px) {
+        font-size: 75%;
+    }
+    @media (max-width: 1300px) {
+        font-size: 70%;
+    }
+    @media (max-width: 1200px) {
+        font-size: 62%;
+    }
+    @media (max-width: 1100px) {
+        font-size: 55%;
+    }
+    @media (max-width: 1000px) {
+        font-size: 50%;
+    }
+    @media (max-width: 900px) {
+        font-size: 45%;
+    }
+    @media (max-width: 800px) {
+        font-size: 42%;
+    }
+    @media (max-width: 700px) {
+        font-size: 38%;
+    }
+    @media (max-width: 600px) {
+        font-size: 35%;
+    }
+    @media (max-width: 500px) {
+        font-size: 32%;
+    }
+}
+body{
+    font-family: "Montserrat",sans-serif;
+    background-color: rgba(var(--bg-color),1);
+    margin: 0;
+    cursor: default;
+    min-height: 100vh;
+    display: flex;
+    @media (max-width:1100px ) {
+        flex-direction: column;
+    }
+}
+#main{
+    flex-grow: 1;
+    position: relative;
+}
+#main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 44vh;
+    width: 20%;
+    background-image: linear-gradient(rgba(var(--gradient-1), 1), rgba(var(--gradient-2), 1));
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 22% 100%);
+    @media (max-width: 1600px) {
+        width: 30%;
+    }
+    @media (max-width: 1400px) {
+        width: 40%;
+        height: 38vh;
+        clip-path: polygon(0 0,100% 0,100% 83%,22% 100%);
+    }
+    @media (max-width: 1100px) {
+        position: absolute;
+        height: 10vh;
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        clip-path: polygon(0 39%,100% 0,100% 100%,0 100%);
+    }
+}
