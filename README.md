@@ -1,11 +1,11 @@
 # Get It Done
 
-![](https://github.com/CormacKrum/Get-It-Done/blob/master/ss1.png)
+![](https://github.com/JayantGoel001/Get-It-Done/blob/master/screenshots/ss1.png)
 
-![](https://github.com/CormacKrum/Get-It-Done/blob/master/ss2.png)
+![](https://github.com/JayantGoel001/Get-It-Done/blob/master/screenshots/ss2.png)
 
-![](https://github.com/CormacKrum/Get-It-Done/blob/master/ss3.png)
+![](https://github.com/JayantGoel001/Get-It-Done/blob/master/screenshots/ss3.png)
 
-![](https://github.com/CormacKrum/Get-It-Done/blob/master/ss4.png)
+![](https://github.com/JayantGoel001/Get-It-Done/blob/master/screenshots/ss4.png)
 
-![](https://github.com/CormacKrum/Get-It-Done/blob/master/ss5.png)
+![](https://github.com/JayantGoel001/Get-It-Done/blob/master/screenshots/ss5.png)
