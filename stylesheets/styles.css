@@ -15,6 +15,20 @@
   display: none;
 }
 
+input#menu:checked ~ #menu-controller {
+  transform: translate(-10vw);
+}
+input#menu:checked ~ #menu-dimmed-bg {
+  visibility: visible;
+  transform: translate(0);
+  transition: transform 1s 0s;
+}
+input#menu:checked ~ #menu-content {
+  visibility: visible;
+  transform: translate(0);
+  transition: transform 0.5s 0.4s;
+}
+
 #menu-controller {
   width: calc(4.5vw + 70px);
   min-height: 100vh;
@@ -36,31 +50,24 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-@media (max-width: 1100px) {
-  #menu-controller {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    min-height: auto;
-    padding-top: 0;
-    height: 100px;
-  }
-  #menu-controller label {
-    width: 100px;
-  }
-}
-@media (max-width: 500px) {
-  #menu-controller {
-    height: 75px;
-  }
-  #menu-controller label {
-    height: 40px;
-  }
+
+#menu-dimmed-bg {
+  visibility: hidden;
+  transform: translate(-120vw);
+  transition: all 0.8s 0.2s, color 0.2s, background-color 0.2s;
+  background-color: rgba(var(--text-color), 0.6);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
 }
 
 #menu-content {
   --menu-font-size: 2.25rem;
-  transition: transform 0.6s 0s, opacity 0s 0.6s;
+  visibility: hidden;
+  transform: translate(-1200px);
+  transition: all 0.6s 0s, color 0.2s, background-color 0.2s;
   padding: 40px 40px 40px 100px;
   position: absolute;
   top: 0;
@@ -103,22 +110,22 @@
 #menu-content #theme h5 span:hover {
   opacity: 0.6;
 }
-#menu-content #completed-task {
+#menu-content #completed-tasks {
   transition: all 0.2s;
 }
-#menu-content #completed-task h5 {
+#menu-content #completed-tasks h5 {
   font-size: var(--menu-font-size);
   margin: 7rem 0 1.5rem;
   text-transform: uppercase;
 }
-#menu-content #completed-task li {
+#menu-content #completed-tasks li {
   font-size: var(--menu-font-size);
   list-style: none;
   margin: 12px 0;
   width: max-content;
   padding: 5px;
 }
-#menu-content #completed-task li span {
+#menu-content #completed-tasks li span {
   margin-left: 22px;
 }
 #menu-content #reset {
@@ -132,21 +139,75 @@
   background-color: rgba(var(--text-color), 1);
   color: rgba(var(--bg-color), 1);
 }
-#menu-dimmed-bg {
-  transition: transform 0.8s 0.2s, color 0.2s, background-color 0.2s;
-  background-color: rgba(var(--text-color), 0.6);
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  min-height: 100vh;
-  width: 100%;
-}
-@media (max-width: 1100px) {
-  #menu-dimmed-bg {
-    transform: translate(0, -120vh);
+@media (max-width: 1500px) {
+  #menu-content {
+    width: 70%;
   }
 }
 
+@media (max-width: 1100px) {
+  #menu-controller {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: auto;
+    height: 100px;
+    padding-top: 0;
+  }
+  #menu-controller label {
+    width: 100px;
+  }
+
+  #menu-dimmed-bg {
+    transform: translate(0, -120vh);
+  }
+
+  #menu-content {
+    --menu-font-size: 3.2rem;
+    transform: translate(0, -100vh);
+    width: 100%;
+    padding: 0;
+  }
+  #menu-content header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #menu-content header label {
+    height: 40px;
+    margin: 40px 0;
+    background-position: center;
+  }
+  #menu-content #theme {
+    margin: 10rem;
+  }
+  #menu-content #theme h5 {
+    text-align: center;
+  }
+  #menu-content #completed-tasks h5 {
+    margin: 10rem 0 4rem;
+    text-align: center;
+  }
+  #menu-content #completed-tasks li {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #menu-content #reset {
+    margin: 12rem auto 100px;
+  }
+
+  input#menu:checked ~ #menu-controller {
+    transform: translate(0, -10vh);
+  }
+}
+@media (max-width: 500px) {
+  #menu-controller {
+    height: 75px;
+  }
+  #menu-controller label {
+    height: 40px;
+  }
+}
 :root {
   --bg-color: 255,255,255;
   --text-color:12,12,12;
