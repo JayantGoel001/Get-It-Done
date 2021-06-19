@@ -14,9 +14,32 @@
         <div id="menu-section">
             <input type="checkbox" id="menu">
             <aside id="menu-controller">
-                <label for="menu"></label>
+                <label for="menu" class="icon"></label>
             </aside>
             <div id="menu-dimmed-bg"></div>
+            <div id="menu-content">
+                <header>
+                    <h4 class="bold">Get It Done</h4>
+                    <label for="menu" class="icon"></label>
+                </header>
+                <section id="theme">
+                    <h5 class="bold">
+                        Theme:
+                        <span id="light" class="current-theme">Light</span>
+                        <span id="dark">Dark</span>
+                    </h5>
+                </section>
+                <section id="completed-task">
+                    <h5 class="bold">Recently Completed Tasks</h5>
+                    <ul id="completed-task-list">
+                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
+                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
+                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
+                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
+                    </ul>
+                </section>
+                <h5 id="reset" class="bold">Reset All</h5>
+            </div>
         </div>
         <section id="main"></section>
         <script type="text/javascript" src="scripts/date_format.js"></script>
