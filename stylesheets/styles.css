@@ -321,6 +321,30 @@ input#menu:checked ~ #menu-content {
     margin: 2rem 0;
     font-size: 6.4rem;
   }
+  #task-list li:last-of-type {
+    margin-bottom: 10rem;
+  }
+}
+#task-list li:first-child:nth-last-child(n+3), #task-list li:first-child:nth-last-child(n+3) ~ li {
+  font-size: 4.5em;
+}
+#task-list li:first-child:nth-last-child(n+5), #task-list li:first-child:nth-last-child(n+5) ~ li {
+  font-size: 3.2em;
+}
+#task-list li:first-child:nth-last-child(n+9), #task-list li:first-child:nth-last-child(n+9) ~ li {
+  font-size: 2.8em;
+}
+#task-list li:first-child:nth-last-child(n+12), #task-list li:first-child:nth-last-child(n+12) ~ li {
+  font-size: 2.4em;
+}
+#task-list li:first-child:nth-last-child(n+20), #task-list li:first-child:nth-last-child(n+20) ~ li {
+  font-size: 2.1em;
+}
+#task-list li:first-child:nth-last-child(n+25), #task-list li:first-child:nth-last-child(n+25) ~ li {
+  font-size: 2em;
+}
+#task-list li:first-child:nth-last-child(n+30), #task-list li:first-child:nth-last-child(n+30) ~ li {
+  font-size: 1.75em;
 }
 
 #input-section {
@@ -507,10 +531,12 @@ body {
   cursor: default;
   min-height: 100vh;
   display: flex;
+  overflow: hidden;
 }
 @media (max-width: 1100px) {
   body {
     flex-direction: column;
+    overflow: visible;
   }
 }
 

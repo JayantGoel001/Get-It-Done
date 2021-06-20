@@ -53,5 +53,23 @@
             margin: 2rem 0;
             font-size: 6.4rem;
         }
+        li:last-of-type{
+            margin-bottom: 10rem;
+        }
+    }
+
+    $list-sizes : (
+            '3': 4.5em,
+            '5': 3.2em,
+            '9': 2.8em,
+            '12':2.4em,
+            '20':2.1em,
+            '25':2.0em,
+            '30':1.75em,
+    );
+    @each $min,$size in $list-sizes{
+        li:first-child:nth-last-child(n+#{$min}),li:first-child:nth-last-child(n+#{$min}) ~li{
+            font-size: #{$size};
+        }
     }
 }
