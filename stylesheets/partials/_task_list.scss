@@ -1,0 +1,57 @@
+@keyframes task-exit {
+    from{
+        transform: perspective(400px);
+    }
+    30%{
+        transform: perspective(400px) rotate3d(1,0,0,-20deg);
+        opacity: 1;
+    }
+    to{
+        transform: perspective(400px) rotate3d(1,0,0,90deg);
+        opacity: 0;
+    }
+}
+.exit{
+    animation-name: task-exit;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+#task-list{
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    align-content: flex-start;
+    user-select: none;
+    font-size: 16px;
+    li{
+        list-style:none;
+        font-size: 5em;
+        margin: .34em 2em .34em 0;
+        color: rgba(var(--text-color),1);
+    }
+    @media (max-width: 1500px) {
+        font-size: 15px;
+        height: 54vh;
+    }
+    @media (max-width: 1300px) {
+        font-size: 14px;
+    }
+    @media (max-width: 1200px) {
+        font-size: 13px;
+    }
+    @media (max-width: 1100px) {
+        font-size: 12px;
+        flex-wrap: nowrap;
+        height: auto;
+        align-items: center;
+        margin: 6rem 0 12rem;
+        li{
+            margin: 2rem 0;
+            font-size: 6.4rem;
+        }
+    }
+}
