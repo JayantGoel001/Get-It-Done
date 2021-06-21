@@ -32,6 +32,28 @@ input.addEventListener("keydown", function(e) {
     }
 });
 
+
+function deleteTaskOnClick(element){
+    let id = Number(element.dataset.id);
+    readOneTask(taskStore,id,function (task) {
+        let completedTask = new CompletedTask(task.title);
+        addTask(completedTaskStore,completedTask,function () {
+            element.classList.add("exit");
+            element.addEventListener("animationend",function () {
+                deleteTask(taskStore,id,function () {
+                    let amountOfTask = Number(loadData(_totalTasks)) - 1;
+                    saveData(_totalTasks, amountOfTask);
+                    updateTask(totalTasks, _totalTasks);
+
+                    let amountOfCompletedTask = Number(loadData(_completedTasks))+1;
+                    saveData(_completedTasks, amountOfCompletedTask);
+                    updateTask(completedTask, _completedTasks);
+                    updateTaskList();
+                });
+            })
+        })
+    });
+}
 function updateTaskList() {
     readTasks(taskStore, function(tasks) {
         let list = document.getElementById("task-list");
@@ -55,24 +77,4 @@ function updateTaskList() {
         }
         list.innerHTML = innerHTML;
     });
-}
-
-function deleteTaskOnClick(element){
-    let id = Number(element.dataset.id);
-    readOneTask(taskStore,id,function (task) {
-        let completedTask = new CompletedTask(task.title);
-        addTask(completedTaskStore,completedTask,function () {
-            element.classList.add("exit");
-            element.addEventListener("animationend",function () {
-                let amountOfTask = Number(loadData(_totalTasks)) - 1;
-                saveData(_totalTasks,amountOfTask);
-                updateTask(totalTasks,_totalTasks);
-
-                let amountOfCompletedTask = Number(loadData(_completedTasks)) + 1;
-                saveData(_completedTasks,amountOfCompletedTask);
-                updateTask(completedTask,_completedTasks);
-            })
-        })
-    });
-
 }
