@@ -39,15 +39,16 @@ function deleteTaskOnClick(element){
         let completedTask = new CompletedTask(task.title);
         addTask(completedTaskStore,completedTask,function () {
             element.classList.add("exit");
+            let amountOfCompletedTask = Number(loadData(_completedTasks)) + 1;
+            saveData(_completedTasks, amountOfCompletedTask);
+            updateTask(completedTasks, _completedTasks);
+
             element.addEventListener("animationend",function () {
                 deleteTask(taskStore,id,function () {
                     let amountOfTask = Number(loadData(_totalTasks)) - 1;
                     saveData(_totalTasks, amountOfTask);
                     updateTask(totalTasks, _totalTasks);
 
-                    let amountOfCompletedTask = Number(loadData(_completedTasks))+1;
-                    saveData(_completedTasks, amountOfCompletedTask);
-                    updateTask(completedTask, _completedTasks);
                     updateTaskList();
                 });
             })
