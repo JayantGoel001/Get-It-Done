@@ -17,6 +17,7 @@ function updateTask(task, _task) {
 }
 updateTask(totalTasks,_totalTasks);
 updateTask(completedTasks,_completedTasks);
+updateTheme(loadData(_toDoTheme));
 
 input.addEventListener("keydown", function(e) {
     if(e.keyCode === 13) {
@@ -78,4 +79,36 @@ function updateTaskList() {
         }
         list.innerHTML = innerHTML;
     });
+}
+function complementTheme(theme) {
+    if (theme==='light'){
+        return 'dark';
+    }else {
+        return 'light';
+    }
+}
+
+function updateTheme(theme) {
+    document.getElementById(theme).classList.add('current-theme');
+    document.getElementById(complementTheme(theme)).classList.remove('current-theme');
+
+    let bgColor = theme === 'light' ? "255, 255, 255" : "19, 19, 19";
+    let textColor = theme === 'light' ? "12, 12, 12" : "255, 255, 255";
+    let shadowColor = theme === 'light' ? "0, 0, 0" : "255, 255, 255";
+    let grad1 = theme === 'light' ? "108, 29, 103" : "34, 208, 163";
+    let grad2 = theme === 'light' ? "100, 25, 148" : "32, 173, 211";
+    let sideGrad1 = theme === 'light' ? "255, 255, 255" : "35, 35, 35";
+    let sideGrad2 = theme === 'light' ? "251, 247, 247" : "46, 46, 46";
+
+    let root = document.documentElement;
+
+    root.style.setProperty('--bg-color',bgColor);
+    root.style.setProperty('--text-color',textColor);
+    root.style.setProperty('--shadow-color',shadowColor);
+    root.style.setProperty('--gradient-1',grad1);
+    root.style.setProperty('--gradient-2',grad2);
+    root.style.setProperty('--sidebar-gradient-1',sideGrad1);
+    root.style.setProperty('--sidebar-gradient-2',sideGrad2);
+
+    saveData(_toDoTheme,theme);
 }

@@ -25,18 +25,13 @@
                 <section id="theme">
                     <h5 class="bold">
                         Theme:
-                        <span id="light" class="current-theme">Light</span>
-                        <span id="dark">Dark</span>
+                        <span id="light" class="current-theme" onclick="updateTheme('light')">Light</span>
+                        <span id="dark" onclick="updateTheme('dark')">Dark</span>
                     </h5>
                 </section>
                 <section id="completed-tasks">
                     <h5 class="bold">Recently Completed Tasks</h5>
-                    <ul id="completed-task-list">
-                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
-                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
-                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
-                        <li class="invert">Walk Dog :<span>Sept 12th</span></li>
-                    </ul>
+                    <ul id="completed-task-list"></ul>
                 </section>
                 <h5 id="reset" class="bold">Reset All</h5>
             </div>
