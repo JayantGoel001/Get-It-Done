@@ -32,7 +32,6 @@ input.addEventListener("keydown", function(e) {
     }
 });
 
-
 function updateTaskList() {
     readTasks(taskStore, function(tasks) {
         let list = document.getElementById("task-list");
@@ -52,8 +51,28 @@ function updateTaskList() {
         let innerHTML = "";
         tasks.reverse();
         for(let i = 0; i < Math.min(tasks.length, maxRecentlyDeleted); i++) {
-            innerHTML += `<li class='invert'>${tasks[i].title}: <span>${tasks[i].completedDate}</span></li>`;
+            innerHTML += `<li class='invert'>${tasks[i].title} : <span>${tasks[i].completedDate}</span></li>`;
         }
         list.innerHTML = innerHTML;
     });
+}
+
+function deleteTaskOnClick(element){
+    let id = Number(element.dataset.id);
+    readOneTask(taskStore,id,function (task) {
+        let completedTask = new CompletedTask(task.title);
+        addTask(completedTaskStore,completedTask,function () {
+            element.classList.add("exit");
+            element.addEventListener("animationend",function () {
+                let amountOfTask = Number(loadData(_totalTasks)) - 1;
+                saveData(_totalTasks,amountOfTask);
+                updateTask(totalTasks,_totalTasks);
+
+                let amountOfCompletedTask = Number(loadData(_completedTasks)) + 1;
+                saveData(_completedTasks,amountOfCompletedTask);
+                updateTask(completedTask,_completedTasks);
+            })
+        })
+    });
+
 }
