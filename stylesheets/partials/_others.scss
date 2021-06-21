@@ -1,7 +1,4 @@
 @import "variables";
-body{
-    margin: 0;
-}
 .black{
     font-weight: 900;
 }
@@ -82,7 +79,7 @@ body{
     margin: 0;
     cursor: default;
     min-height: 100vh;
-    display: flex;
+    display: none;
     overflow: hidden;
     @media (max-width:1100px ) {
         flex-direction: column;

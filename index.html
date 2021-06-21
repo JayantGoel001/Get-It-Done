@@ -33,7 +33,7 @@
                     <h5 class="bold">Recently Completed Tasks</h5>
                     <ul id="completed-task-list"></ul>
                 </section>
-                <h5 id="reset" class="bold">Reset All</h5>
+                <h5 id="reset" class="bold" onclick="attemptReset();">Reset All</h5>
             </div>
         </div>
         <section id="main">
@@ -59,10 +59,10 @@
             </article>
             <ul id="task-list" class="bold"></ul>
         </section>
-        <dialog id="modal">
+        <dialog id="modal" >
             <h2 class="bold">This will reset all associated data. <br>Are you sure you want to do that?</h2>
-            <button class="black">Yes</button>
-            <button class="black">No</button>
+            <button class="black" onclick="closeModal(); reset();">Yes</button>
+            <button class="black" onclick="closeModal();">No</button>
         </dialog>
         <script type="text/javascript" src="scripts/date_format.js"></script>
         <script type="text/javascript" src="scripts/storage.js"></script>

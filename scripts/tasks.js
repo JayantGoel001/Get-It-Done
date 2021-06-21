@@ -16,14 +16,15 @@ window.onload = function () {
     req.onsuccess = function() {
         database = req.result;
         updateTaskList();
+        document.body.style.display = "flex";
     }
     req.onerror = function(event) {
         alert("There was an error", event);
     }
-    req.onupgradeneeded = function(event) {
+    req.onupgradeneeded = function() {
         let db = req.result;
-        let objectStore = db.createObjectStore(taskStore, { keyPath: "id", autoIncrement: true });
-        let objectStore2 = db.createObjectStore(completedTaskStore, { keyPath: "id", autoIncrement: true });
+        db.createObjectStore(taskStore, { keyPath: "id", autoIncrement: true });
+        db.createObjectStore(completedTaskStore, { keyPath: "id", autoIncrement: true });
     }
 }
 let defaultError = function() {

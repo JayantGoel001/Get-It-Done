@@ -111,4 +111,27 @@ function updateTheme(theme) {
     root.style.setProperty('--sidebar-gradient-2',sideGrad2);
 
     saveData(_toDoTheme,theme);
+
+    let invert = theme==='light' ? "0%" : "100%";
+    let elements = document.getElementsByClassName("icon");
+    for (let i = 0;i<elements.length;i++) {
+        elements[i].style.filter = `brightness(100%) invert(${invert})`;
+    }
+}
+function attemptReset(){
+    modal.showModal();
+}
+function closeModal() {
+    modal.close();
+}
+function reset() {
+    deleteAllTasks(taskStore);
+    deleteAllTasks(completedTaskStore);
+    saveData(_totalTasks,0);
+    saveData(_completedTasks,0);
+
+    updateTheme('light');
+    updateTask(totalTasks,_totalTasks);
+    updateTask(completedTasks,_completedTasks);
+    updateTaskList();
 }
