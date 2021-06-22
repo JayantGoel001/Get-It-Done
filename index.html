@@ -62,23 +62,13 @@
                 <input type="text" id="task-input" placeholder="Create Task">
                 <label for="task-input">Press enter to create task!</label>
             </article>
-            <ul id="task-list" class="bold">
-                <li>Code</li>
-                <li>Sleep</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-                <li>Repeat</li>
-            </ul>
+            <ul id="task-list" class="bold"></ul>
         </section>
+        <dialog id="modal">
+            <h2 class="bold">This will reset all associated data. <br>Are you sure you want to do that?</h2>
+            <button class="black">Yes</button>
+            <button class="black">No</button>
+        </dialog>
         <script type="text/javascript" src="scripts/date_format.js"></script>
         <script type="text/javascript" src="scripts/storage.js"></script>
         <script type="text/javascript" src="scripts/tasks.js"></script>

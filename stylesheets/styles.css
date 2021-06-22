@@ -402,6 +402,103 @@ input#menu:checked ~ #menu-content {
   }
 }
 
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg) translateY(-50%);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg) translateY(-50%);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg) translateY(-50%);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg) translateY(-50%);
+  }
+  to {
+    transform: perspective(400px) translateY(-50%);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#modal {
+  border: none;
+  font-size: 1rem;
+  background-image: linear-gradient(to left, rgba(var(--gradient-1), 1), rgba(var(--gradient-2), 1));
+  color: white;
+  padding: 2.8rem 10rem;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  outline: none;
+  transform: translateY(-50%);
+}
+#modal h2 {
+  margin-bottom: 30px;
+  line-height: 170%;
+}
+#modal button {
+  outline: none;
+  border: 2px solid white;
+  font-size: 1.15rem;
+  padding: 0.6em 4em;
+  transition: all 0.1s;
+  background-color: transparent;
+  color: white;
+}
+#modal button:hover {
+  transform: scale(1.1);
+}
+#modal[open] {
+  animation: flipInX ease 0.5s 0.2s;
+  animation-fill-mode: both;
+}
+@media (max-width: 1100px) {
+  #modal[open] {
+    animation: fadeIn ease 0.25s;
+  }
+}
+@media (max-width: 1400px) {
+  #modal {
+    font-size: 1.65rem;
+  }
+  #modal button {
+    font-size: 1.85rem;
+  }
+}
+@media (max-width: 1100px) {
+  #modal {
+    font-size: 3.2rem;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 60vh 0 0;
+    margin: 0;
+  }
+  #modal button {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 500px) {
+  #modal {
+    letter-spacing: -1px;
+    font-size: 2.45rem;
+  }
+  #modal button {
+    font-size: 3rem;
+  }
+}
+
 :root {
   --bg-color: 255,255,255;
   --text-color:12,12,12;
